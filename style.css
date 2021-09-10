@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+}
+body {
+  text-align: center;
+}
+a {
+  margin: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.social {
+  margin-top: 30px;
+  background-color: rgba(48, 46, 46, 0.171);
+}
+.header-h2 {
+  margin-top: 30px;
+}
+.insta {
+  height: 20px;
+  width: 20px;
+}
