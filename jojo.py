@@ -3,6 +3,7 @@ import pyttsx3
 import datetime
 import speech_recognition as sr
 import pyaudio
+import wikipedia
 
 
 # init function to get an engine instance for the speech synthesis
@@ -51,7 +52,7 @@ def takeCommand():
         print("User said",query)
 
     except Exception as e:
-        print("say that again please...")
+        print("Please say that again ...")
         return "None" #it returns none if any problem occurs
     return query
 
@@ -59,4 +60,12 @@ def takeCommand():
 
 if __name__=="__main__":
        wishme()     
-       takeCommand()
+       while True:
+        query=takeCommand().lower()
+        #logic for executing the tasks
+        if wikipedia in query:
+            speak("Searching Wikipedia...")
+            query=query.replace("wikipedia", "")
+            results=wikipedia.summary(query,sentences=2) # summary()-This function retrieves the summary from a Wikipedia page on a particular topic.
+            speak("According to Wikipedia")
+            speak(results)
