@@ -63,9 +63,10 @@ if __name__=="__main__":
        while True:
         query=takeCommand().lower()
         #logic for executing the tasks
-        if wikipedia in query:
+        if 'wikipedia' in query:
             speak("Searching Wikipedia...")
-            query=query.replace("wikipedia", "")
+            query=query.replace("w ikipedia", "")
             results=wikipedia.summary(query,sentences=2) # summary()-This function retrieves the summary from a Wikipedia page on a particular topic.
             speak("According to Wikipedia")
+            print(results)
             speak(results)
