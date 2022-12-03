@@ -1,9 +1,9 @@
-#pyttsx3 is a text-to-speech conversion library in Python
-import pyttsx3
+import pyttsx3 #pyttsx3 is a text-to-speech conversion library in Python
 import datetime
 import speech_recognition as sr
 import pyaudio
 import wikipedia
+import webbrowser #webbrowser is for opening the web pages
 
 
 # init function to get an engine instance for the speech synthesis
@@ -61,12 +61,24 @@ def takeCommand():
 if __name__=="__main__":
        wishme()     
        while True:
-        query=takeCommand().lower()
+        query=takeCommand().lower() #we are converting in the lower case so that what we speak will be rendered in lower case
         #logic for executing the tasks
         if 'wikipedia' in query:
             speak("Searching Wikipedia...")
-            query=query.replace("w ikipedia", "")
-            results=wikipedia.summary(query,sentences=2) # summary()-This function retrieves the summary from a Wikipedia page on a particular topic.
+            query=query.replace("wikipedia", "")
+            results=wikipedia.summary(query,sentences=1) # summary()-This function retrieves the summary from a Wikipedia page on a particular topic.
             speak("According to Wikipedia")
             print(results)
             speak(results)
+
+        elif 'open youtube' in query:
+            speak("opening Youtube...")
+            webbrowser.open("www.google.com")
+        elif 'open google' in query:
+            speak("opening google...")
+            webbrowser.open('www.youtube.com')
+        elif 'open stackover' in query:
+            webbrowser.open('www.stackoverflow.com')
+
+
+        elif 'play music' in query
