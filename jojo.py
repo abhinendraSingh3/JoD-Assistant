@@ -91,7 +91,7 @@ if __name__=="__main__":
             print(strTime)
             speak(f"Sir the time is {strTime}")
             
-        elif 'open code' in query:
+        elif 'open visual studio code' or 'vs code' in query:
             codepath="C:\\Users\\JoD\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             speak("Please wait while i'm Opening code for you")
             os.startfile(codepath)
