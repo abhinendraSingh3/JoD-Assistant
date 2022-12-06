@@ -49,7 +49,7 @@ def takeCommand():
     try:
         print("Recognizing...")
         query=r.recognize_google(audio,language="en-in")
-        print("User said",query)
+        print("User Said :",query)
 
     except Exception as e:
         print("Please say that again ...")
@@ -60,13 +60,14 @@ def takeCommand():
 
 if __name__=="__main__":
        wishme()     
-       while True:
+       if 1:
         query=takeCommand().lower() #we are converting in the lower case so that what we speak will be rendered in lower case
         #logic for executing the tasks
+
         if 'wikipedia' in query:
             speak("Searching Wikipedia...")
             query=query.replace("wikipedia", "")
-            results=wikipedia.summary(query,sentences=1) # summary()-This function retrieves the summary from a Wikipedia page on a particular topic.
+            results=wikipedia.summary(query,sentences=2) # summary()-This function retrieves the summary from a Wikipedia page on a particular topic.
             speak("According to Wikipedia")
             print(results)
             speak(results)
@@ -74,11 +75,20 @@ if __name__=="__main__":
         elif 'open youtube' in query:
             speak("opening Youtube...")
             webbrowser.open("www.google.com")
+
         elif 'open google' in query:
             speak("opening google...")
             webbrowser.open('www.youtube.com')
-        elif 'open stackover' in query:
+
+        elif 'open stackoverflow' in query:
+            speak("Opening Stackoverflow...")
             webbrowser.open('www.stackoverflow.com')
 
 
-        elif 'play music' in query
+        elif 'time' in query:
+            strTime=datetime.datetime.now().strftime('%H:%M:%S')
+            print(strTime)
+            speak(f"Sir the time is {strTime}")
+            
+        
+        # elif'open code' in query:
