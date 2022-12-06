@@ -4,6 +4,7 @@ import speech_recognition as sr
 import pyaudio
 import wikipedia
 import webbrowser #webbrowser is for opening the web pages
+import os
 
 
 # init function to get an engine instance for the speech synthesis
@@ -90,5 +91,7 @@ if __name__=="__main__":
             print(strTime)
             speak(f"Sir the time is {strTime}")
             
-        
-        # elif'open code' in query:
+        elif 'open code' in query:
+            codepath="C:\\Users\\JoD\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            speak("Please wait while i'm Opening code for you")
+            os.startfile(codepath)
