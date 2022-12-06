@@ -7,6 +7,12 @@ import webbrowser #webbrowser is for opening the web pages
 import os
 
 
+name=dict{
+    'rahul':'rahulyadav0045@gmail.com',
+    'anju':'quiteanju@gmail.com',
+    'abhinendra':'abhinendrayadav3@gmail.com'
+}
+
 # init function to get an engine instance for the speech synthesis
 engine=pyttsx3.init('sapi5')
 
@@ -95,3 +101,4 @@ if __name__=="__main__":
             codepath="C:\\Users\\JoD\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             speak("Please wait while i'm Opening code for you")
             os.startfile(codepath)
+        elif 'send email'in query:
