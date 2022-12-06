@@ -7,7 +7,7 @@ import webbrowser #webbrowser is for opening the web pages
 import os
 
 
-name=dict{
+dict={
     'rahul':'rahulyadav0045@gmail.com',
     'anju':'quiteanju@gmail.com',
     'abhinendra':'abhinendrayadav3@gmail.com'
@@ -42,7 +42,7 @@ def wishme():
     else:
         speak("Good Evening!")
 
-    speak("I am Jojo. Your personal assistant. Please tell me sir how may i help you")
+    speak("I am Jod. Your personal assistant. Please tell me sir how may i help you")
 
 
 def takeCommand():
@@ -85,7 +85,7 @@ if __name__=="__main__":
 
         elif 'open google' in query:
             speak("opening google...")
-            webbrowser.open('www.youtube.com')
+            webbrowser.open('www.google.com')
 
         elif 'open stackoverflow' in query:
             speak("Opening Stackoverflow...")
@@ -101,4 +101,4 @@ if __name__=="__main__":
             codepath="C:\\Users\\JoD\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             speak("Please wait while i'm Opening code for you")
             os.startfile(codepath)
-        elif 'send email'in query:
+        # elif 'send email'in query:
